@@ -1,0 +1,14 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+data/
+outputs/
+*.pdf
+*.png
+*.tif
+*.tiff
+*.nd2
+*.pkl
+*.npz
+config.yml
