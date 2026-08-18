@@ -1,0 +1,77 @@
+figure	panel	publication_status	displayed_content	release_classification	analysis_id	note
+Fig. 1	a	Current	STREAMING-tag imaging schematic	representative_or_schematic_no_numeric_data		No plotted numerical data required.
+Fig. 1	b	Current	Locus-centered image quantification schematic	representative_or_schematic_no_numeric_data		No plotted numerical data required.
+Fig. 1	c	Current	Active/Inactive mean images and radial profiles for phospho-RNAPII and active histone marks at four loci	source_data_collected	SNAPSHOT_RADIAL_SUMMARY	Final baseline-subtracted, max-normalized radial means and SEM values derived from canonical PKL stacks.
+Fig. 2	a	Current	seq-DNA/RNA/IF-FISH reanalysis workflow	representative_or_schematic_no_numeric_data		No plotted numerical data required.
+Fig. 2	b	Current	Gene-wise active-minus-inactive IF z-score by activity-rank quartile	source_data_collected	SEQFISH_REANALYSIS	Gene-wise activity quartiles and Active-minus-Inactive IF values.
+Fig. 2	c	Current	sci-mtChIL-seq schematic	representative_or_schematic_no_numeric_data		No plotted numerical data required.
+Fig. 2	d	Current	sci-mtChIL-seq dataset overview	representative_or_schematic_no_numeric_data		No plotted numerical table required; retain the stated image/public-data provenance separately.
+Fig. 2	e	Current	Definition of Active/Inactive read-count windows	representative_or_schematic_no_numeric_data		No plotted numerical data required.
+Fig. 2	f	Current	Gene-wise log2 Active/Inactive CPT ratios across activity-frequency bins	source_data_collected	SCI_MTCHIL_REANALYSIS	Gene-wise Active/Inactive CPT ratios and activity-bin values.
+Fig. 3	a	Current	Acetylation writer/reader/eraser schematic	representative_or_schematic_no_numeric_data		No plotted numerical data required.
+Fig. 3	b	Current	STRING network of HDAC-associated factors	representative_or_schematic_no_numeric_data		No plotted numerical table required; retain the stated image/public-data provenance separately.
+Fig. 3	c	Current	ChromHMM emission and factor-enrichment heatmaps	source_data_collected	CHROMHMM_FIG3C	Exact student-supplied notebook, 12-state emission table, state BEDs, factor-by-state mean-signal matrix, plotted z-scores, and public bigWig accession map are deposited in module 16.
+Fig. 3	d	Current	STREAMING-tag and SNAPtag imaging schematic	representative_or_schematic_no_numeric_data		No plotted numerical data required.
+Fig. 3	e	Current	Nanog Active/Inactive locus-centered accumulation for acetylation regulators and HDAC modules	source_data_collected	SNAPSHOT_RADIAL_SUMMARY	Final baseline-subtracted, max-normalized radial means and SEM values derived from canonical PKL stacks.
+Fig. 4	a	Current	SOX2, MCP, and mTetR Active/Inactive locus-centered images and radial profiles	source_data_collected	SNAPSHOT_RADIAL_SUMMARY	Final baseline-subtracted, max-normalized radial means and SEM values derived from canonical PKL stacks.
+Fig. 4	b	Current	Representative 2-min SOX2/MCP locus movie and intensity trace	source_data_collected	FIG4B_SOX2_TRACE	Selected SOX2 2-min representative trace (cell 2-5).
+Fig. 4	c	Current	Mean cross-correlation curves	source_data_collected	CROSSCORR_2MIN_CURVES	Mean baseline-corrected cross-correlation curves and 95% confidence intervals for the 2-min analyses.
+Fig. 4	d	Current	Lead-lag index forest plot with permutation tests	source_data_collected	CROSSCORR_2MIN_LLI	Per-cell lead-lag index and zero-lag correlation values.
+Fig. 5	a	Current	HDAC inhibitor experiment and dwell-time analysis schematic	representative_or_schematic_no_numeric_data		No plotted numerical data required.
+Fig. 5	b	Current	Representative cell state rasters for Nanog and Sox2	source_data_collected	FIG5_STATE_FRAMES	Per-cell per-frame Active/Inactive calls used in Fig. 5.
+Fig. 5	c	Current	Nanog Active and Inactive Kaplan-Meier curves	source_data_collected	FIG5_DWELL_RUNS	Run-level dwell durations and left/right censoring flags used for Kaplan-Meier analyses.
+Fig. 5	d	Current	Sox2 Active and Inactive Kaplan-Meier curves	source_data_collected	FIG5_DWELL_RUNS	Run-level dwell durations and left/right censoring flags used for Kaplan-Meier analyses.
+Fig. 5	e	Current	Nanog cell-level duty cycle	source_data_collected	FIG5_DUTY_CYCLE	Per-cell duty-cycle values and RMST summaries used in Fig. 5.
+Fig. 5	f	Current	Sox2 cell-level duty cycle	source_data_collected	FIG5_DUTY_CYCLE	Per-cell duty-cycle values and RMST summaries used in Fig. 5.
+Fig. 6	unlettered	Current	Working model	representative_or_schematic_no_numeric_data		No plotted numerical data required.
+Supplementary Fig. 1	a	Current	Dnmt3L knock-in locus schematic	representative_or_schematic_no_numeric_data		No plotted numerical data required.
+Supplementary Fig. 1	b	Current	Southern blot	representative_or_schematic_no_numeric_data		No plotted numerical table required; retain the stated image/public-data provenance separately.
+Supplementary Fig. 1	c	Current	Sanger sequence confirmation	representative_or_schematic_no_numeric_data		No plotted numerical table required; retain the stated image/public-data provenance separately.
+Supplementary Fig. 1	d	Current	MSD analysis (d) for Usp5/Dnmt3L biological replicates	source_data_collected	MSD_REVISION	Usp5/Dnmt3L trajectory-level and replicate-level MSD source tables.
+Supplementary Fig. 1	e	Current	MSD analysis (e) for Usp5/Dnmt3L biological replicates	source_data_collected	MSD_REVISION	Usp5/Dnmt3L trajectory-level and replicate-level MSD source tables.
+Supplementary Fig. 1	f	Current	MSD analysis (f) for Usp5/Dnmt3L biological replicates	source_data_collected	MSD_REVISION	Usp5/Dnmt3L trajectory-level and replicate-level MSD source tables.
+Supplementary Fig. 1	g	Current	MSD analysis (g) for Usp5/Dnmt3L biological replicates	source_data_collected	MSD_REVISION	Usp5/Dnmt3L trajectory-level and replicate-level MSD source tables.
+Supplementary Fig. 2	a	Current	Representative nuclear localization images for probes/reporters	representative_or_schematic_no_numeric_data		No plotted numerical table required; retain the stated image/public-data provenance separately.
+Supplementary Fig. 2	b	Current	Hoechst validation of nuclear localization	representative_or_schematic_no_numeric_data		No plotted numerical table required; retain the stated image/public-data provenance separately.
+Supplementary Fig. 3	a	Current	FACS gating stage a	representative_or_schematic_no_numeric_data		No plotted numerical table required; retain the stated image/public-data provenance separately.
+Supplementary Fig. 3	b	Current	FACS gating stage b	representative_or_schematic_no_numeric_data		No plotted numerical table required; retain the stated image/public-data provenance separately.
+Supplementary Fig. 3	c	Current	FACS gating stage c	representative_or_schematic_no_numeric_data		No plotted numerical table required; retain the stated image/public-data provenance separately.
+Supplementary Fig. 3	d	Current	FACS gating stage d	representative_or_schematic_no_numeric_data		No plotted numerical table required; retain the stated image/public-data provenance separately.
+Supplementary Fig. 3	e	Current	Reporter nuclear-intensity ECDF/effect/AUC analysis (CFP/YFP background)	source_data_collected	SNAPSHOT_CELL_MEASUREMENTS	Per-cell snapshot intensity/state values from the canonical 2026-01 data package.
+Supplementary Fig. 4	a	Current	Locus-centered images and radial profiles for H3K4me3/H3K27me3/H2B/NLS	source_data_collected	SNAPSHOT_RADIAL_SUMMARY	Final baseline-subtracted, max-normalized radial means and SEM values derived from canonical PKL stacks.
+Supplementary Fig. 4	b	Current	Center-pixel violin distributions across probes and loci	source_data_collected	SNAPSHOT_CELL_MEASUREMENTS	Per-cell snapshot intensity/state values from the canonical 2026-01 data package.
+Supplementary Fig. 4	c	Current	Spearman correlation heatmap of SNAPtag and relative MCP	source_data_collected	SNAPSHOT_CORRELATION	Exact selected-replicate heatmap values and per-image locus-centered SNAP/relative-MCP measurements.
+Supplementary Fig. 4	d	Revision-added; legend missing	Representative 200-nm bead images, conventional CSU-W1 versus SoRa	source_data_collected	BEAD_RESOLUTION	Per-bead FWHM values, pair identifiers, fit QC, and exclusion decisions.
+Supplementary Fig. 4	e	Revision-added; legend missing	Observed lateral bead FWHM comparison	source_data_collected	BEAD_RESOLUTION	Per-bead FWHM values, pair identifiers, fit QC, and exclusion decisions.
+Supplementary Fig. 4	f	Revision-added; legend missing	SoRa fixed-cell locus-centered H3K27ac/RNAPII Ser5ph validation	source_data_collected	SORA_REVISION	Fixed-cell SoRa locus-centered measurements for the two revision biological replicates.
+Supplementary Fig. 5	a	Current	Nanog genome-browser tracks	representative_or_schematic_no_numeric_data		No plotted numerical table required; retain the stated image/public-data provenance separately.
+Supplementary Fig. 5	b	Current	Sox2 genome-browser tracks	representative_or_schematic_no_numeric_data		No plotted numerical table required; retain the stated image/public-data provenance separately.
+Supplementary Fig. 5	c	Current	Usp5 genome-browser tracks	representative_or_schematic_no_numeric_data		No plotted numerical table required; retain the stated image/public-data provenance separately.
+Supplementary Fig. 5	d	Current	Dnmt3L genome-browser tracks	representative_or_schematic_no_numeric_data		No plotted numerical table required; retain the stated image/public-data provenance separately.
+Supplementary Fig. 5	e	Current	Gene-window versus genome-wide joint z-score enrichment	source_data_collected	CHIPSEQ_ENRICHMENT	TSS-centered gene-window values, genome-wide 0.5-Mb bins, joint z-scores, target summaries, and public accessions.
+Supplementary Fig. 6	a	Current	Active allele counts across seqFISH activity quartiles	source_data_collected	SEQFISH_REANALYSIS	Gene-wise activity quartiles and Active-minus-Inactive IF values.
+Supplementary Fig. 6	b	Current	Active cell counts across sci-mtChIL activity bins	source_data_collected	SCI_MTCHIL_REANALYSIS	Gene-wise Active/Inactive CPT ratios and activity-bin values.
+Supplementary Fig. 7	a	Current	MARCS feature effects for selected HDAC-related genes	source_data_collected	MARCS_REANALYSIS	Protein- and complex-level MARCS feature-effect tables.
+Supplementary Fig. 7	b	Current	MARCS complex volcano plot for H3ac	source_data_collected	MARCS_REANALYSIS	All 129 plotted complexes with effect sizes and BH-adjusted P values.
+Supplementary Fig. 7	c	Current	MARCS complex volcano plot for H4ac	source_data_collected	MARCS_REANALYSIS	All 130 plotted complexes with effect sizes and BH-adjusted P values.
+Supplementary Fig. 7	d	Current	MARCS complex volcano plot for H3K4me3	source_data_collected	MARCS_REANALYSIS	All 130 plotted complexes with effect sizes and BH-adjusted P values.
+Supplementary Fig. 8	unlettered	Current	Representative nuclear localization images for SNAPtag fusion proteins	representative_or_schematic_no_numeric_data		No plotted numerical table required; retain the stated image/public-data provenance separately.
+Supplementary Fig. 9	a	Current	SNAPtag FACS gating	representative_or_schematic_no_numeric_data		No plotted numerical table required; retain the stated image/public-data provenance separately.
+Supplementary Fig. 9	b	Current	HDAC1/2/3-SNAPtag Western blots	representative_or_schematic_no_numeric_data		No plotted numerical table required; retain the stated image/public-data provenance separately.
+Supplementary Fig. 9	c	Displayed; legend missing	Reporter nuclear-intensity ECDF/effect/AUC analysis (RFP/GFP background)	source_data_collected	SNAPSHOT_CELL_MEASUREMENTS	Per-cell snapshot intensity/state values from the canonical 2026-01 data package.
+Supplementary Fig. 10	unlettered	Current	Sox2 Active/Inactive locus-centered accumulation for acetylation regulators and HDAC modules	source_data_collected	SNAPSHOT_RADIAL_SUMMARY	Final baseline-subtracted, max-normalized radial means and SEM values derived from canonical PKL stacks.
+Supplementary Fig. 11	a	Current	BRD4 and SIN3A mean cross-correlation curves	source_data_collected	CROSSCORR_2MIN_CURVES	Mean baseline-corrected cross-correlation curves and 95% confidence intervals for the 2-min analyses.
+Supplementary Fig. 11	b	Current	Time-shift permutation null distributions	source_data_collected	CROSSCORR_2MIN_NULL	Time-shift permutation null distributions used for LLI tests.
+Supplementary Fig. 11	c	Revision-added; legend missing	SOX2 1-min cross-correlation	source_data_collected	SOX2_TEMPORAL_RESOLUTION	SOX2 2-min, 1-min and 30-s cross-correlation/LLI source values.
+Supplementary Fig. 11	d	Revision-added; legend missing	SOX2 30-s cross-correlation	source_data_collected	SOX2_TEMPORAL_RESOLUTION	SOX2 2-min, 1-min and 30-s cross-correlation/LLI source values.
+Supplementary Fig. 11	e	Revision-added; legend missing	SOX2 1-min/30-s LLI comparison	source_data_collected	SOX2_TEMPORAL_RESOLUTION	SOX2 2-min, 1-min and 30-s cross-correlation/LLI source values.
+Supplementary Fig. 12	a	Revision working; no legend	mTetR threshold-sensitivity summary	source_data_collected	HDAC_THRESHOLD_SENSITIVITY	mTetR/MCP threshold sweeps, run-level values, and effect estimates.
+Supplementary Fig. 12	b	Revision working; no legend	MCP threshold-sensitivity summary	source_data_collected	HDAC_THRESHOLD_SENSITIVITY	mTetR/MCP threshold sweeps, run-level values, and effect estimates.
+Supplementary Fig. 12	c	Revision working; no legend	Nanog duty cycle by time window	source_data_collected	HDAC_TIME_WINDOWS	Per-cell treatment-window duty-cycle values and adjusted tests.
+Supplementary Fig. 12	d	Revision working; no legend	Sox2 duty cycle by time window	source_data_collected	HDAC_TIME_WINDOWS	Per-cell treatment-window duty-cycle values and adjusted tests.
+Supplementary Fig. 13	a	Current	Nanog nuclear and locus-centered H3K27ac responses to DMSO, TSA, and RGFP966	source_data_collected	ACUTE_INHIBITOR_SIGNAL	Pooled per-cell nuclear and locus-centered values, summaries, adjusted tests, and experiment manifest.
+Supplementary Fig. 13	b	Current	Sox2 nuclear and locus-centered H3K27ac responses to DMSO, TSA, and RGFP966	source_data_collected	ACUTE_INHIBITOR_SIGNAL	Pooled per-cell nuclear and locus-centered values, summaries, adjusted tests, and experiment manifest.
+Supplementary Fig. 13	c	Current	Nanog transcription, nuclear H3K27ac, and locus-centered H3K27ac responses to THZ1	source_data_collected	ACUTE_INHIBITOR_SIGNAL	Pooled per-cell values, Active fractions, summaries, adjusted tests, and experiment manifest.
+Supplementary Fig. 13	d	Current	Nanog transcription, nuclear p300, and locus-centered p300 responses to THZ1	source_data_collected	ACUTE_INHIBITOR_SIGNAL	Pooled per-cell values, Active fractions, summaries, adjusted tests, and experiment manifest.
+Supplementary Fig. 13	e	Current	Nanog transcription, nuclear HDAC1, and locus-centered HDAC1 responses to THZ1	source_data_collected	ACUTE_INHIBITOR_SIGNAL	Pooled per-cell values, Active fractions, summaries, adjusted tests, and experiment manifest.
+Supplementary Fig. 13	f	Current	Nanog transcription, nuclear HDAC3, and locus-centered HDAC3 responses to THZ1	source_data_collected	ACUTE_INHIBITOR_SIGNAL	Pooled per-cell values, Active fractions, summaries, adjusted tests, and experiment manifest.

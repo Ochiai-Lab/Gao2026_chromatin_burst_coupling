@@ -1,0 +1,11 @@
+# Copy this file to config.yml and adjust local paths.
+data_root: /path/to/Gao2026/data
+raw_root: /path/to/optional/external_raw
+external_root: /path/to/optional/external_public_inputs
+output_root: ./outputs
+
+# The notebooks also honor these environment variables:
+# GAO2026_DATA_ROOT
+# GAO2026_RAW_ROOT
+# GAO2026_EXTERNAL_ROOT
+# GAO2026_OUTPUT_ROOT

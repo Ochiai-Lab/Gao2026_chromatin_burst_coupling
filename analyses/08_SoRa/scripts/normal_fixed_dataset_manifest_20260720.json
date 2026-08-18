@@ -1,0 +1,562 @@
+[
+  {
+    "analysis_id": "sox2_h3k27ac_rep1_normal",
+    "replicate": "rep1",
+    "chamber": "ChamberA",
+    "acquisition_date": "2026-07-16",
+    "field": 4,
+    "streaming_tag_locus": "Sox2",
+    "mintbody": "H3K27ac",
+    "path": "Ko/260716-SoRa_Fixed/260716_SoRa/260716_ChamberA/ChamberA_20260716_205221_Field4.nd2",
+    "imaging_mode": "Normal",
+    "file_name": "ChamberA_20260716_205221_Field4.nd2",
+    "file_bytes": 35040907264,
+    "fov_count": 100,
+    "z_count": 11,
+    "channel_count": 3,
+    "height_px": 2304,
+    "width_px": 2304,
+    "dtype": "uint16",
+    "voxel_x_um": 0.065,
+    "voxel_y_um": 0.065,
+    "voxel_z_um": 0.5,
+    "objective_name": "PLAN APO λD 100x OIL OFN25 DIC N2",
+    "objective_magnification": 100.0,
+    "objective_na": 1.45,
+    "zoom": 1.0,
+    "modality_flags": [
+      "fluorescence",
+      "spinningDiskConfocal"
+    ],
+    "channel_settings": [
+      {
+        "channel_index": 0,
+        "nd2_name": "OH_CY_640nm",
+        "laser_nm": 640,
+        "laser_power_percent": 100.0,
+        "exposure_ms": 100
+      },
+      {
+        "channel_index": 1,
+        "nd2_name": "OH_CY_515nm",
+        "laser_nm": 515,
+        "laser_power_percent": 50.0,
+        "exposure_ms": 100
+      },
+      {
+        "channel_index": 2,
+        "nd2_name": "OH_CY_445nm",
+        "laser_nm": 445,
+        "laser_power_percent": 100.0,
+        "exposure_ms": 100
+      }
+    ],
+    "channel_0_biological_label": "SNAPtag / H3K27ac mintbody",
+    "channel_1_biological_label": "mTetR-3xmGold2s",
+    "channel_2_biological_label": "MCP-3xCFP",
+    "analysis_status": "pending",
+    "checks": {
+      "three_channels": true,
+      "eleven_z_planes": true,
+      "image_2304_square": true,
+      "uint16": true,
+      "voxel_xy65nm_z500nm": true,
+      "objective_100x_na145": true,
+      "normal_zoom_1": true,
+      "no_sora_flag": true,
+      "laser_order_640_515_445": true,
+      "exposure_profile_matches_chamber": true
+    },
+    "all_metadata_checks_passed": true
+  },
+  {
+    "analysis_id": "sox2_ser5ph_rep1_normal",
+    "replicate": "rep1",
+    "chamber": "ChamberA",
+    "acquisition_date": "2026-07-16",
+    "field": 6,
+    "streaming_tag_locus": "Sox2",
+    "mintbody": "Ser5ph",
+    "path": "Ko/260716-SoRa_Fixed/260716_SoRa/260716_ChamberA/ChamberA_20260716_205221_Field6.nd2",
+    "imaging_mode": "Normal",
+    "file_name": "ChamberA_20260716_205221_Field6.nd2",
+    "file_bytes": 35040907264,
+    "fov_count": 100,
+    "z_count": 11,
+    "channel_count": 3,
+    "height_px": 2304,
+    "width_px": 2304,
+    "dtype": "uint16",
+    "voxel_x_um": 0.065,
+    "voxel_y_um": 0.065,
+    "voxel_z_um": 0.5,
+    "objective_name": "PLAN APO λD 100x OIL OFN25 DIC N2",
+    "objective_magnification": 100.0,
+    "objective_na": 1.45,
+    "zoom": 1.0,
+    "modality_flags": [
+      "fluorescence",
+      "spinningDiskConfocal"
+    ],
+    "channel_settings": [
+      {
+        "channel_index": 0,
+        "nd2_name": "OH_CY_640nm",
+        "laser_nm": 640,
+        "laser_power_percent": 100.0,
+        "exposure_ms": 100
+      },
+      {
+        "channel_index": 1,
+        "nd2_name": "OH_CY_515nm",
+        "laser_nm": 515,
+        "laser_power_percent": 50.0,
+        "exposure_ms": 100
+      },
+      {
+        "channel_index": 2,
+        "nd2_name": "OH_CY_445nm",
+        "laser_nm": 445,
+        "laser_power_percent": 100.0,
+        "exposure_ms": 100
+      }
+    ],
+    "channel_0_biological_label": "SNAPtag / Ser5ph mintbody",
+    "channel_1_biological_label": "mTetR-3xmGold2s",
+    "channel_2_biological_label": "MCP-3xCFP",
+    "analysis_status": "pending",
+    "checks": {
+      "three_channels": true,
+      "eleven_z_planes": true,
+      "image_2304_square": true,
+      "uint16": true,
+      "voxel_xy65nm_z500nm": true,
+      "objective_100x_na145": true,
+      "normal_zoom_1": true,
+      "no_sora_flag": true,
+      "laser_order_640_515_445": true,
+      "exposure_profile_matches_chamber": true
+    },
+    "all_metadata_checks_passed": true
+  },
+  {
+    "analysis_id": "nanog_h3k27ac_rep1_normal",
+    "replicate": "rep1",
+    "chamber": "ChamberA",
+    "acquisition_date": "2026-07-16",
+    "field": 7,
+    "streaming_tag_locus": "Nanog",
+    "mintbody": "H3K27ac",
+    "path": "Ko/260716-SoRa_Fixed/260716_SoRa/260716_ChamberA/ChamberA_20260716_205221_Field7.nd2",
+    "imaging_mode": "Normal",
+    "file_name": "ChamberA_20260716_205221_Field7.nd2",
+    "file_bytes": 35040907264,
+    "fov_count": 100,
+    "z_count": 11,
+    "channel_count": 3,
+    "height_px": 2304,
+    "width_px": 2304,
+    "dtype": "uint16",
+    "voxel_x_um": 0.065,
+    "voxel_y_um": 0.065,
+    "voxel_z_um": 0.5,
+    "objective_name": "PLAN APO λD 100x OIL OFN25 DIC N2",
+    "objective_magnification": 100.0,
+    "objective_na": 1.45,
+    "zoom": 1.0,
+    "modality_flags": [
+      "fluorescence",
+      "spinningDiskConfocal"
+    ],
+    "channel_settings": [
+      {
+        "channel_index": 0,
+        "nd2_name": "OH_CY_640nm",
+        "laser_nm": 640,
+        "laser_power_percent": 100.0,
+        "exposure_ms": 100
+      },
+      {
+        "channel_index": 1,
+        "nd2_name": "OH_CY_515nm",
+        "laser_nm": 515,
+        "laser_power_percent": 50.0,
+        "exposure_ms": 100
+      },
+      {
+        "channel_index": 2,
+        "nd2_name": "OH_CY_445nm",
+        "laser_nm": 445,
+        "laser_power_percent": 100.0,
+        "exposure_ms": 100
+      }
+    ],
+    "channel_0_biological_label": "SNAPtag / H3K27ac mintbody",
+    "channel_1_biological_label": "mTetR-3xmGold2s",
+    "channel_2_biological_label": "MCP-3xCFP",
+    "analysis_status": "pending",
+    "checks": {
+      "three_channels": true,
+      "eleven_z_planes": true,
+      "image_2304_square": true,
+      "uint16": true,
+      "voxel_xy65nm_z500nm": true,
+      "objective_100x_na145": true,
+      "normal_zoom_1": true,
+      "no_sora_flag": true,
+      "laser_order_640_515_445": true,
+      "exposure_profile_matches_chamber": true
+    },
+    "all_metadata_checks_passed": true
+  },
+  {
+    "analysis_id": "nanog_ser5ph_rep1_normal",
+    "replicate": "rep1",
+    "chamber": "ChamberA",
+    "acquisition_date": "2026-07-16",
+    "field": 8,
+    "streaming_tag_locus": "Nanog",
+    "mintbody": "Ser5ph",
+    "path": "Ko/260716-SoRa_Fixed/260716_SoRa/260716_ChamberA/ChamberA_20260716_205221_Field8.nd2",
+    "imaging_mode": "Normal",
+    "file_name": "ChamberA_20260716_205221_Field8.nd2",
+    "file_bytes": 35040907264,
+    "fov_count": 100,
+    "z_count": 11,
+    "channel_count": 3,
+    "height_px": 2304,
+    "width_px": 2304,
+    "dtype": "uint16",
+    "voxel_x_um": 0.065,
+    "voxel_y_um": 0.065,
+    "voxel_z_um": 0.5,
+    "objective_name": "PLAN APO λD 100x OIL OFN25 DIC N2",
+    "objective_magnification": 100.0,
+    "objective_na": 1.45,
+    "zoom": 1.0,
+    "modality_flags": [
+      "fluorescence",
+      "spinningDiskConfocal"
+    ],
+    "channel_settings": [
+      {
+        "channel_index": 0,
+        "nd2_name": "OH_CY_640nm",
+        "laser_nm": 640,
+        "laser_power_percent": 100.0,
+        "exposure_ms": 100
+      },
+      {
+        "channel_index": 1,
+        "nd2_name": "OH_CY_515nm",
+        "laser_nm": 515,
+        "laser_power_percent": 50.0,
+        "exposure_ms": 100
+      },
+      {
+        "channel_index": 2,
+        "nd2_name": "OH_CY_445nm",
+        "laser_nm": 445,
+        "laser_power_percent": 100.0,
+        "exposure_ms": 100
+      }
+    ],
+    "channel_0_biological_label": "SNAPtag / Ser5ph mintbody",
+    "channel_1_biological_label": "mTetR-3xmGold2s",
+    "channel_2_biological_label": "MCP-3xCFP",
+    "analysis_status": "representative_in_progress",
+    "checks": {
+      "three_channels": true,
+      "eleven_z_planes": true,
+      "image_2304_square": true,
+      "uint16": true,
+      "voxel_xy65nm_z500nm": true,
+      "objective_100x_na145": true,
+      "normal_zoom_1": true,
+      "no_sora_flag": true,
+      "laser_order_640_515_445": true,
+      "exposure_profile_matches_chamber": true
+    },
+    "all_metadata_checks_passed": true
+  },
+  {
+    "analysis_id": "sox2_h3k27ac_rep2_normal",
+    "replicate": "rep2",
+    "chamber": "ChamberB",
+    "acquisition_date": "2026-07-17",
+    "field": 4,
+    "streaming_tag_locus": "Sox2",
+    "mintbody": "H3K27ac",
+    "path": "Ko/260717-SoRa_Fixed/260717_ChamberB/ChamberB_20260717_215046_Field4.nd2",
+    "imaging_mode": "Normal",
+    "file_name": "ChamberB_20260717_215046_Field4.nd2",
+    "file_bytes": 78841344000,
+    "fov_count": 225,
+    "z_count": 11,
+    "channel_count": 3,
+    "height_px": 2304,
+    "width_px": 2304,
+    "dtype": "uint16",
+    "voxel_x_um": 0.065,
+    "voxel_y_um": 0.065,
+    "voxel_z_um": 0.5,
+    "objective_name": "PLAN APO λD 100x OIL OFN25 DIC N2",
+    "objective_magnification": 100.0,
+    "objective_na": 1.45,
+    "zoom": 1.0,
+    "modality_flags": [
+      "fluorescence",
+      "spinningDiskConfocal"
+    ],
+    "channel_settings": [
+      {
+        "channel_index": 0,
+        "nd2_name": "OH_CY_640nm",
+        "laser_nm": 640,
+        "laser_power_percent": 100.0,
+        "exposure_ms": 100
+      },
+      {
+        "channel_index": 1,
+        "nd2_name": "OH_CY_515nm",
+        "laser_nm": 515,
+        "laser_power_percent": 50.0,
+        "exposure_ms": 100
+      },
+      {
+        "channel_index": 2,
+        "nd2_name": "OH_CY_445nm",
+        "laser_nm": 445,
+        "laser_power_percent": 100.0,
+        "exposure_ms": 100
+      }
+    ],
+    "channel_0_biological_label": "SNAPtag / H3K27ac mintbody",
+    "channel_1_biological_label": "mTetR-3xmGold2s",
+    "channel_2_biological_label": "MCP-3xCFP",
+    "analysis_status": "pending",
+    "checks": {
+      "three_channels": true,
+      "eleven_z_planes": true,
+      "image_2304_square": true,
+      "uint16": true,
+      "voxel_xy65nm_z500nm": true,
+      "objective_100x_na145": true,
+      "normal_zoom_1": true,
+      "no_sora_flag": true,
+      "laser_order_640_515_445": true,
+      "exposure_profile_matches_chamber": true
+    },
+    "all_metadata_checks_passed": true
+  },
+  {
+    "analysis_id": "sox2_ser5ph_rep2_normal",
+    "replicate": "rep2",
+    "chamber": "ChamberB",
+    "acquisition_date": "2026-07-17",
+    "field": 6,
+    "streaming_tag_locus": "Sox2",
+    "mintbody": "Ser5ph",
+    "path": "Ko/260717-SoRa_Fixed/260717_ChamberB/ChamberB_20260717_215046_Field6.nd2",
+    "imaging_mode": "Normal",
+    "file_name": "ChamberB_20260717_215046_Field6.nd2",
+    "file_bytes": 78841344000,
+    "fov_count": 225,
+    "z_count": 11,
+    "channel_count": 3,
+    "height_px": 2304,
+    "width_px": 2304,
+    "dtype": "uint16",
+    "voxel_x_um": 0.065,
+    "voxel_y_um": 0.065,
+    "voxel_z_um": 0.5,
+    "objective_name": "PLAN APO λD 100x OIL OFN25 DIC N2",
+    "objective_magnification": 100.0,
+    "objective_na": 1.45,
+    "zoom": 1.0,
+    "modality_flags": [
+      "fluorescence",
+      "spinningDiskConfocal"
+    ],
+    "channel_settings": [
+      {
+        "channel_index": 0,
+        "nd2_name": "OH_CY_640nm",
+        "laser_nm": 640,
+        "laser_power_percent": 100.0,
+        "exposure_ms": 100
+      },
+      {
+        "channel_index": 1,
+        "nd2_name": "OH_CY_515nm",
+        "laser_nm": 515,
+        "laser_power_percent": 50.0,
+        "exposure_ms": 100
+      },
+      {
+        "channel_index": 2,
+        "nd2_name": "OH_CY_445nm",
+        "laser_nm": 445,
+        "laser_power_percent": 100.0,
+        "exposure_ms": 100
+      }
+    ],
+    "channel_0_biological_label": "SNAPtag / Ser5ph mintbody",
+    "channel_1_biological_label": "mTetR-3xmGold2s",
+    "channel_2_biological_label": "MCP-3xCFP",
+    "analysis_status": "pending",
+    "checks": {
+      "three_channels": true,
+      "eleven_z_planes": true,
+      "image_2304_square": true,
+      "uint16": true,
+      "voxel_xy65nm_z500nm": true,
+      "objective_100x_na145": true,
+      "normal_zoom_1": true,
+      "no_sora_flag": true,
+      "laser_order_640_515_445": true,
+      "exposure_profile_matches_chamber": true
+    },
+    "all_metadata_checks_passed": true
+  },
+  {
+    "analysis_id": "nanog_h3k27ac_rep2_normal",
+    "replicate": "rep2",
+    "chamber": "ChamberB",
+    "acquisition_date": "2026-07-17",
+    "field": 7,
+    "streaming_tag_locus": "Nanog",
+    "mintbody": "H3K27ac",
+    "path": "Ko/260717-SoRa_Fixed/260717_ChamberB/ChamberB_20260717_215046_Field7.nd2",
+    "imaging_mode": "Normal",
+    "file_name": "ChamberB_20260717_215046_Field7.nd2",
+    "file_bytes": 78841344000,
+    "fov_count": 225,
+    "z_count": 11,
+    "channel_count": 3,
+    "height_px": 2304,
+    "width_px": 2304,
+    "dtype": "uint16",
+    "voxel_x_um": 0.065,
+    "voxel_y_um": 0.065,
+    "voxel_z_um": 0.5,
+    "objective_name": "PLAN APO λD 100x OIL OFN25 DIC N2",
+    "objective_magnification": 100.0,
+    "objective_na": 1.45,
+    "zoom": 1.0,
+    "modality_flags": [
+      "fluorescence",
+      "spinningDiskConfocal"
+    ],
+    "channel_settings": [
+      {
+        "channel_index": 0,
+        "nd2_name": "OH_CY_640nm",
+        "laser_nm": 640,
+        "laser_power_percent": 100.0,
+        "exposure_ms": 100
+      },
+      {
+        "channel_index": 1,
+        "nd2_name": "OH_CY_515nm",
+        "laser_nm": 515,
+        "laser_power_percent": 50.0,
+        "exposure_ms": 100
+      },
+      {
+        "channel_index": 2,
+        "nd2_name": "OH_CY_445nm",
+        "laser_nm": 445,
+        "laser_power_percent": 100.0,
+        "exposure_ms": 100
+      }
+    ],
+    "channel_0_biological_label": "SNAPtag / H3K27ac mintbody",
+    "channel_1_biological_label": "mTetR-3xmGold2s",
+    "channel_2_biological_label": "MCP-3xCFP",
+    "analysis_status": "pending",
+    "checks": {
+      "three_channels": true,
+      "eleven_z_planes": true,
+      "image_2304_square": true,
+      "uint16": true,
+      "voxel_xy65nm_z500nm": true,
+      "objective_100x_na145": true,
+      "normal_zoom_1": true,
+      "no_sora_flag": true,
+      "laser_order_640_515_445": true,
+      "exposure_profile_matches_chamber": true
+    },
+    "all_metadata_checks_passed": true
+  },
+  {
+    "analysis_id": "nanog_ser5ph_rep2_normal",
+    "replicate": "rep2",
+    "chamber": "ChamberB",
+    "acquisition_date": "2026-07-17",
+    "field": 8,
+    "streaming_tag_locus": "Nanog",
+    "mintbody": "Ser5ph",
+    "path": "Ko/260717-SoRa_Fixed/260717_ChamberB/ChamberB_20260717_215046_Field8.nd2",
+    "imaging_mode": "Normal",
+    "file_name": "ChamberB_20260717_215046_Field8.nd2",
+    "file_bytes": 78841344000,
+    "fov_count": 225,
+    "z_count": 11,
+    "channel_count": 3,
+    "height_px": 2304,
+    "width_px": 2304,
+    "dtype": "uint16",
+    "voxel_x_um": 0.065,
+    "voxel_y_um": 0.065,
+    "voxel_z_um": 0.5,
+    "objective_name": "PLAN APO λD 100x OIL OFN25 DIC N2",
+    "objective_magnification": 100.0,
+    "objective_na": 1.45,
+    "zoom": 1.0,
+    "modality_flags": [
+      "fluorescence",
+      "spinningDiskConfocal"
+    ],
+    "channel_settings": [
+      {
+        "channel_index": 0,
+        "nd2_name": "OH_CY_640nm",
+        "laser_nm": 640,
+        "laser_power_percent": 100.0,
+        "exposure_ms": 100
+      },
+      {
+        "channel_index": 1,
+        "nd2_name": "OH_CY_515nm",
+        "laser_nm": 515,
+        "laser_power_percent": 50.0,
+        "exposure_ms": 100
+      },
+      {
+        "channel_index": 2,
+        "nd2_name": "OH_CY_445nm",
+        "laser_nm": 445,
+        "laser_power_percent": 100.0,
+        "exposure_ms": 100
+      }
+    ],
+    "channel_0_biological_label": "SNAPtag / Ser5ph mintbody",
+    "channel_1_biological_label": "mTetR-3xmGold2s",
+    "channel_2_biological_label": "MCP-3xCFP",
+    "analysis_status": "pending",
+    "checks": {
+      "three_channels": true,
+      "eleven_z_planes": true,
+      "image_2304_square": true,
+      "uint16": true,
+      "voxel_xy65nm_z500nm": true,
+      "objective_100x_na145": true,
+      "normal_zoom_1": true,
+      "no_sora_flag": true,
+      "laser_order_640_515_445": true,
+      "exposure_profile_matches_chamber": true
+    },
+    "all_metadata_checks_passed": true
+  }
+]

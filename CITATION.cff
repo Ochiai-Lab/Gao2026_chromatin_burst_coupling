@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the associated Gao et al. manuscript and this software release."
+title: "Gao2026 chromatin burst coupling analysis code"
+version: "0.9.0-rc1"
+date-released: 2026-08-14
+license: MIT
+authors:
+  - family-names: Gao
+    given-names: Xiaohui
+  - family-names: Ochiai
+    given-names: Hiroshi
+    orcid: "https://orcid.org/0000-0002-5635-1327"
+repository-code: "https://github.com/Ochiai-Lab/Gao2026_chromatin_burst_coupling"
