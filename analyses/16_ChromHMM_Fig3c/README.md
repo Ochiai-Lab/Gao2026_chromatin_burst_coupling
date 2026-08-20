@@ -33,4 +33,4 @@ python analyses/16_ChromHMM_Fig3c/scripts/recompute_fig3c_signal_matrix.py \
 
 The calculation calls `pyBigWig.stats(..., type="mean", nBins=1)` for every state interval, multiplies each interval mean by its length, and divides the summed signal by the summed length. This is computationally intensive and is not run by the default processed-data reproduction suite.
 
-`SRX12798486` is intentionally retained as the displayed label because the current figure and the supplied final matrix use that label. The accession corresponds to the public experiment titled `GSM5658967: ESC_H33KO_Brd4; Mus musculus; ChIP-Seq`; the accession map records this provenance explicitly.
+Only bigWig files whose accession is listed in the script's `SAMPLE_MAP` are processed; any other file in the directory is ignored.
