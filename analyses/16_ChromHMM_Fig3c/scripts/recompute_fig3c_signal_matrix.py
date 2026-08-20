@@ -20,7 +20,8 @@ import pyBigWig
 SAMPLE_MAP = {
     "SRX3898502": "BRD4",
     "ERX2789783": "HDAC3",
-    "SRX2875257": "RNAPII",
+    # CHANGED: removed "SRX2875257": "RNAPII" (RNAPII is dropped before plotting
+    # and is not shown in Fig. 3c, so it is no longer processed).
     "SRX029864": "SIN3A",
     "SRX047138": "HDAC2",
     "SRX1091746": "NCOR2",
@@ -64,7 +65,13 @@ def main() -> int:
 
     for bigwig_path in sorted(args.bigwig_dir.glob("*.bw")):
         sample_id = bigwig_path.stem
-        factor_name = SAMPLE_MAP.get(sample_id, sample_id)
+        # CHANGED: process ONLY bigWigs that have an explicit SAMPLE_MAP entry.
+        # Files in the folder without a mapping (e.g. SRX12798486, mm10-blacklist,
+        # mm10.chrom.sizes) are skipped instead of being plotted under their raw ID.
+        # (Old behaviour: factor_name = SAMPLE_MAP.get(sample_id, sample_id))
+        if sample_id not in SAMPLE_MAP:
+            continue
+        factor_name = SAMPLE_MAP[sample_id]
         print(f"Processing: {sample_id} -> {factor_name}", flush=True)
         bigwig = pyBigWig.open(str(bigwig_path))
         row_values: dict[str, float] = {}
