@@ -1,20 +1,21 @@
 # Gao2026 chromatin burst coupling
 
-Audited release-candidate code associated with Gao et al. The audit date is
-2026-08-18. This tree is not yet the publishable `v1.0.0` release.
+Audited release-candidate code associated with Gao et al. The final code audit
+date is 2026-08-22. This tree is not yet the publishable `v1.0.0` release.
 
 ## Scope
 
 The repository contains the original five analysis modules plus revision modules for SOX2 temporal-resolution analysis, MSD, fixed-cell SoRa imaging, bead-resolution validation, HDAC-inhibitor time windows, threshold sensitivity, integrated Fig. 5 analyses, MARCS reanalysis, acute inhibitor imaging, ChIP-seq enrichment, and the Fig. 3c ChromHMM analysis.
 
 Notebook outputs, generated figures, data files, credentials, personal paths,
-and NAS paths are excluded from the clean GitHub code package. Raw-image stages
+and absolute NAS paths are excluded from the clean GitHub code package. Raw-image stages
 require separately controlled microscopy data. Processed-data analyses and
 final-table replots use the deposited data package.
 
-The 2026-08-18 audit found and corrected the public candidates for
+The 2026-08-22 audit found and corrected the public candidates for
 Cross-correlation, seqFISH, sci-mtChIL-seq, integrated Fig. 5, MARCS inputs,
-and Supplementary Fig. 13 tables. The previously uploaded `v0.9.0-rc1` Zenodo
+Supplementary Fig. 13 tables, figure-code-data references, and residual
+non-English notebook documentation. The previously uploaded `v0.9.0-rc1` Zenodo
 draft must be replaced before publication.
 
 Only data displayed in the manuscript, observations used to calculate a

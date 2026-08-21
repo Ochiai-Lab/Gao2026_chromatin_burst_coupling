@@ -35,8 +35,31 @@ def main() -> int:
         help="Root containing the extracted revision/ directory, or revision itself.",
     )
     args = parser.parse_args()
-    root = revision_root(args.data_root.expanduser().resolve())
+    data_root = args.data_root.expanduser().resolve()
+    root = revision_root(data_root)
     require(root.is_dir(), f"revision data root exists: {root}")
+
+    cross_root = data_root / "02_Cross_correlation" / "csv"
+    if not cross_root.is_dir():
+        cross_root = root / "02_Cross_correlation_publication_inputs" / "csv"
+    required_cross_files = {
+        "all_cells_spot_intensity_seg_cell_BRD4.csv",
+        "all_cells_spot_intensity_seg_cell_CHD4.csv",
+        "all_cells_spot_intensity_seg_cell_H3K27ac.csv",
+        "all_cells_spot_intensity_seg_cell_HDAC1.csv",
+        "all_cells_spot_intensity_seg_cell_HDAC3.csv",
+        "all_cells_spot_intensity_seg_cell_HDAC3_del_detrend.csv",
+        "all_cells_spot_intensity_P300.csv",
+        "all_cells_spot_intensity_seg_cell_SIN3A.csv",
+        "all_cells_spot_intensity_seg_cell_SOX2.csv",
+        "all_cells_spot_intensity_seg_cell_SOX2_del_detrend.csv",
+        "all_cells_spot_intensity_seg_cell_SOX2_1min.csv",
+    }
+    observed_cross_files = {path.name for path in cross_root.glob("*.csv")}
+    require(
+        required_cross_files.issubset(observed_cross_files),
+        "all 11 cross-correlation inputs used for multiple-testing correction are present",
+    )
 
     temporal = read_rows(
         root / "06_SOX2_temporal_resolution" / "SOX2_cross_correlation_per_cell.csv"
