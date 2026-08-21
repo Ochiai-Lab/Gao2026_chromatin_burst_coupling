@@ -2,9 +2,9 @@
 
 Dnmt3L and Usp5 locus-mobility analysis used in the MSD Supplementary figure.
 
-- The deposited per-trajectory and replicate-level MSD tables reproduce the
-  final publication PDF and associated summary tables exactly.
-- `notebooks/new_MSD_replot_from_deposited_tables.ipynb` performs this final
-  plotting stage without repeating trajectory extraction.
-- Reprocessing from raw ND2 movies is not included in the current public data
-  package and was not repeated in the release audit.
+- `notebooks/MSD_analysis_Usp5_Dnmt3L_all_replicates.ipynb` contains the
+  publication-scoped trajectory analysis for the four Usp5/Dnmt3L biological-
+  replicate datasets. Raw ND2 movies are not included in the public package.
+- `notebooks/MSD_publication_replot_from_deposited_tables.ipynb` reproduces the
+  final publication PDF from the deposited replicate-level MSD and fit tables
+  without repeating trajectory extraction.
