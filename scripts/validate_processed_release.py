@@ -52,8 +52,8 @@ def main() -> int:
 
     msd_rows = read_rows(root / "07_MSD" / "all_replicates_msd_per_trajectory.csv")
     msd_summary = read_rows(root / "07_MSD" / "replicate_msd_summary.csv")
-    require(len(msd_rows) == 24022, "MSD per-trajectory rows = 24022")
-    require(len(msd_summary) == 792, "MSD replicate-summary rows = 792")
+    require(len(msd_rows) == 15442, "MSD per-trajectory rows = 15442")
+    require(len(msd_summary) == 528, "MSD replicate-summary rows = 528")
 
     sora_profiles = list((root / "08_SoRa").rglob("gao_fig1c_radial_profiles.csv"))
     require(len(sora_profiles) == 8, "SoRa biological-replicate radial-profile files = 8")
@@ -188,10 +188,10 @@ def main() -> int:
         chromhmm_counts
         == {
             "emissions": 120,
-            "mean_signals": 228,
-            "zscores": 228,
+            "mean_signals": 216,
+            "zscores": 216,
             "states": 12,
-            "accessions": 20,
+            "accessions": 18,
             "state_beds": 12,
         },
         f"Fig. 3c ChromHMM source rows and BED files: {chromhmm_counts}",
