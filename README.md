@@ -15,8 +15,9 @@ final-table replots use the deposited data package.
 The 2026-08-22 audit found and corrected the public candidates for
 Cross-correlation, seqFISH, sci-mtChIL-seq, integrated Fig. 5, MARCS inputs,
 Supplementary Fig. 13 tables, figure-code-data references, and residual
-non-English notebook documentation. The previously uploaded `v0.9.0-rc1` Zenodo
-draft must be replaced before publication.
+non-English notebook documentation. The Zenodo draft is being updated with the
+validated unified data, code, and release metadata. The article Source Data
+workbook is distributed with the journal article and is not duplicated in Zenodo.
 
 Only data displayed in the manuscript, observations used to calculate a
 displayed aggregate, and direct processed provenance for a displayed analysis
