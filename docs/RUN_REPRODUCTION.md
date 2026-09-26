@@ -63,7 +63,7 @@ python scripts/validate_reproduced_outputs.py \
 2. Fig. 3c: the final emission and factor-state matrices, state BEDs, exact
    plotting code, and plotted values are deposited. The default suite performs
    an exact matrix-to-figure replot. Full factor-matrix recomputation requires
-   the 20 public bigWig files listed by module 16 and is computationally intensive.
+   the 18 public bigWig files listed by module 16 and is computationally intensive.
 3. SOX2 temporal resolution: 1-min and 30-s final tables are deposited, but the
    three trace-level CSV inputs required to repeat the entire calculation are
    not currently included.
@@ -72,5 +72,6 @@ python scripts/validate_reproduced_outputs.py \
 5. ChIP-seq enrichment: final tables are deposited. Full recomputation requires
    the 18 public bigWig inputs documented by module 15.
 
-The corrected data/code package must replace the earlier `v0.9.0-rc1` Zenodo
-draft files before publication.
+Use the matching `v1.0.0` code and data archives. See `VALIDATION.md` for the
+2026-09-26 processed-data reproduction check. These tests do not imply that
+non-deposited raw-image processing has been repeated.

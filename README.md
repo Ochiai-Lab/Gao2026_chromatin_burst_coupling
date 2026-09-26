@@ -1,21 +1,22 @@
 # Gao2026 chromatin burst coupling
 
-Audited release-candidate code associated with Gao et al. The audit date is
-2026-08-18. This tree is not yet the publishable `v1.0.0` release.
+Analysis code for Gao et al., "Minute-scale coupling of chromatin marks and
+transcriptional bursts". Version: `1.0.0`.
 
 ## Scope
 
 The repository contains the original five analysis modules plus revision modules for SOX2 temporal-resolution analysis, MSD, fixed-cell SoRa imaging, bead-resolution validation, HDAC-inhibitor time windows, threshold sensitivity, integrated Fig. 5 analyses, MARCS reanalysis, acute inhibitor imaging, ChIP-seq enrichment, and the Fig. 3c ChromHMM analysis.
 
 Notebook outputs, generated figures, data files, credentials, personal paths,
-and NAS paths are excluded from the clean GitHub code package. Raw-image stages
+and absolute NAS paths are excluded from the clean GitHub code package. Raw-image stages
 require separately controlled microscopy data. Processed-data analyses and
 final-table replots use the deposited data package.
 
-The 2026-08-18 audit found and corrected the public candidates for
-Cross-correlation, seqFISH, sci-mtChIL-seq, integrated Fig. 5, MARCS inputs,
-and Supplementary Fig. 13 tables. The previously uploaded `v0.9.0-rc1` Zenodo
-draft must be replaced before publication.
+The companion archive is `Gao2026_data_v1.0.0.zip`. Code and data are packaged
+separately so that this repository can be used without downloading raw images.
+The article Source Data workbook accompanies the journal article and is not
+duplicated in the data archive. See `docs/VALIDATION.md` for the tested workflow
+and its limits.
 
 Only data displayed in the manuscript, observations used to calculate a
 displayed aggregate, and direct processed provenance for a displayed analysis
@@ -95,7 +96,7 @@ interpreting a generated plot.
 | 15 | `15_chipseq_enrichment/` | Supplementary Fig. 5e gene-window, genome-bin, accession, and summary tables |
 | 16 | `16_ChromHMM_Fig3c/` | Fig. 3c state BEDs, emission probabilities, factor-by-state signals, z-scores, and public accession map |
 
-Raw-image stages cannot run without a separately authorized
+Raw-image stages cannot run without a separately supplied
 `GAO2026_RAW_ROOT`. MARCS can be recomputed from the deposited source
 workbooks. ChIP-seq and ChromHMM factor-matrix full recomputation require the
 public bigWig files listed in the module READMEs; their deposited-table replots

@@ -141,7 +141,6 @@ def command_for(
         return [
             sys.executable,
             "-m",
-            "jupyter",
             "nbconvert",
             "--to",
             "notebook",
