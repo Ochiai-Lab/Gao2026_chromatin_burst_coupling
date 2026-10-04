@@ -1,7 +1,7 @@
 # Gao2026 chromatin burst coupling
 
 Analysis code for Gao et al., "Minute-scale coupling of chromatin marks and
-transcriptional bursts". Version: `1.0.0`.
+transcriptional bursts". Version: `1.0.1`.
 
 ## Scope
 
@@ -12,11 +12,24 @@ and absolute NAS paths are excluded from the clean GitHub code package. Raw-imag
 require separately controlled microscopy data. Processed-data analyses and
 final-table replots use the deposited data package.
 
-The companion archive is `Gao2026_data_v1.0.0.zip`. Code and data are packaged
+The companion archive is `Gao2026_data_v1.0.1.zip`. Code and data are packaged
 separately so that this repository can be used without downloading raw images.
 The article Source Data workbook accompanies the journal article and is not
 duplicated in the data archive. See `docs/VALIDATION.md` for the tested workflow
 and its limits.
+
+## Transcription-state labels
+
+CSV columns `state`, `raw_state`, and `kind` use `Active`/`Inactive` in version
+1.0.1. The state-aware readers accept both these labels and the earlier
+`ON`/`OFF` aliases, so the underlying classification and numerical analyses
+are unchanged. Internal aliases, binary 0/1 calls, field names such as
+`on_images`/`off_images`, and legacy filenames remain for compatibility.
+CSV export explicitly converts state labels without mutating the analysis
+DataFrame. No measurement, threshold, statistical value, or raw image was
+changed by this label-only update.
+
+Run the focused compatibility tests with `python -m unittest discover -s tests`.
 
 Only data displayed in the manuscript, observations used to calculate a
 displayed aggregate, and direct processed provenance for a displayed analysis
