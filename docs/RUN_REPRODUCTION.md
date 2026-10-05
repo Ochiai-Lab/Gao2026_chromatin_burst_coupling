@@ -72,6 +72,7 @@ python scripts/validate_reproduced_outputs.py \
 5. ChIP-seq enrichment: final tables are deposited. Full recomputation requires
    the 18 public bigWig inputs documented by module 15.
 
-Use the matching `v1.0.0` code and data archives. See `VALIDATION.md` for the
-2026-09-26 processed-data reproduction check. These tests do not imply that
+Use the matching `v1.0.2` code and data archives. See `VALIDATION.md` for the
+2026-10-06 corrected-TSS normalization and final-table reproduction checks
+and their documented scope. These tests do not imply that
 non-deposited raw-image processing has been repeated.

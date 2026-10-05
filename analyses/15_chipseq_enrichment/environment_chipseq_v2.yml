@@ -1,0 +1,12 @@
+name: gao2026-chipseq-v2
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10.20
+  - numpy=2.2.6
+  - pandas=2.3.3
+  - pybigwig=0.3.25
+  - matplotlib=3.10.9
+  - jupyter
+  - nbclient
+  - nbformat

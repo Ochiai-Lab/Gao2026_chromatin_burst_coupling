@@ -47,6 +47,28 @@ def main() -> None:
 
     genome_table = pd.read_csv(module_root / "fig_s5e_genome_bins_joint_zscore.csv")
     gene_table = pd.read_csv(module_root / "fig_s5e_gene_windows_joint_zscore.csv")
+    annotations = pd.read_csv(module_root / "annotated_tss_refseq_108_20200622.csv")
+    if len(annotations) != 4 or not annotations["gene"].is_unique:
+        raise AssertionError("One RefSeq Select transcript per gene is required")
+    for row in annotations.itertuples():
+        expected_tss = row.transcript_start_1based - 1 if row.strand == "+" else row.transcript_end_1based - 1
+        if row.tss_0based != expected_tss:
+            raise AssertionError(f"Invalid annotated TSS for {row.gene}")
+        windows = gene_table.loc[gene_table["gene"].eq(row.gene)]
+        if not (windows["tss"].eq(expected_tss).all()
+                and windows["window_start"].eq(expected_tss - 250000).all()
+                and windows["window_end"].eq(expected_tss + 250000).all()):
+            raise AssertionError(f"Gene windows do not match the annotation: {row.gene}")
+    for target, group in genome_table.groupby("target", sort=False):
+        gene_group = gene_table.loc[gene_table["target"].eq(target)]
+        population = np.concatenate([group["signal"].dropna().to_numpy(float),
+                                     gene_group["signal"].dropna().to_numpy(float)])
+        mean, std = population.mean(), population.std(ddof=0)
+        for values in (group, gene_group):
+            if not np.allclose((values["signal"] - mean) / std, values["z_joint"],
+                               rtol=1e-12, atol=1e-12, equal_nan=True):
+                raise AssertionError(f"Joint z-score recomputation failed: {target}")
+
     genome_z_df = genome_table.loc[genome_table["included_in_boxplot"].astype(bool)].copy()
     gene_z_df = gene_table.loc[gene_table["included_as_gene_point"].astype(bool)].copy()
     genome_z_df = genome_z_df[["target_order", "target", "z_joint"]]
@@ -129,7 +151,7 @@ def main() -> None:
         for text in legend.get_texts():
             text.set_fontstyle("italic")
         figure.tight_layout()
-        output_pdf = output_root / "joint_zscore_per_target_fixedbins_genewindows.pdf"
+        output_pdf = output_root / "joint_zscore_per_target_fixedbins_genewindows_v2.pdf"
         figure.savefig(output_pdf, format="pdf", bbox_inches="tight")
         plt.close(figure)
 

@@ -1,7 +1,7 @@
 # Gao2026 chromatin burst coupling
 
 Analysis code for Gao et al., "Minute-scale coupling of chromatin marks and
-transcriptional bursts". Version: `1.0.1`.
+transcriptional bursts". Version: `1.0.2`.
 
 ## Scope
 
@@ -12,7 +12,7 @@ and absolute NAS paths are excluded from the clean GitHub code package. Raw-imag
 require separately controlled microscopy data. Processed-data analyses and
 final-table replots use the deposited data package.
 
-The companion archive is `Gao2026_data_v1.0.1.zip`. Code and data are packaged
+The companion archive is `Gao2026_data_v1.0.2.zip`. Code and data are packaged
 separately so that this repository can be used without downloading raw images.
 The article Source Data workbook accompanies the journal article and is not
 duplicated in the data archive. See `docs/VALIDATION.md` for the tested workflow
