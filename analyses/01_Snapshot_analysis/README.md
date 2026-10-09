@@ -1,6 +1,6 @@
 # 01_Snapshot_analysis
 
-This module is part of the Gao2026 v1.0.3 release.
+This module is part of the Gao2026 v1.0.4 release.
 
 The `ci_inputs/` data subdirectory contains the original-unit observations
 needed for the additional article Source Data comparison-effect intervals.

@@ -25,7 +25,7 @@ CONDITIONS = (
     ("sox2_h3k27ac", r"$\it{Sox2}$ H3K27ac"),
     ("sox2_ser5ph", r"$\it{Sox2}$ RNAPII Ser5ph"),
 )
-REPLICATES = ("rep4",)
+REPLICATES = ("rep1",)
 STATE_COLORS = {
     "Active": "tab:orange",
     "Inactive": "tab:blue",
@@ -231,7 +231,7 @@ def main() -> None:
             validation_rows.append(
                 {
                     "condition": condition,
-                    "internal_replicate": replicate,
+                    "public_replicate": replicate,
                     "biological_replicate": replicate_index + 1,
                     "n_active": int(stats["n_active"]),
                     "n_inactive": int(stats["n_inactive"]),

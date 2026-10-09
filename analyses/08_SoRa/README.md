@@ -7,9 +7,9 @@ Fixed-cell SoRa analysis used for the higher-resolution validation.
   Active-state distance cutoff `0.39 um`.
 - `scripts/replot_quantitative_panels_from_tables.py` regenerates the radial
   profiles and Active/Inactive quantitative summaries from deposited tables.
-- The publication replot uses only internal experiment `rep4`, which matches
-  all four displayed N/P combinations and the article Source Data. Internal
-  experiment `rep3` and mixed-experiment tables are not deposited in v1.0.3.
+- The publication replot uses only the displayed experiment, designated
+  `rep1` in this public package. All four displayed N/P combinations and
+  the article Source Data use this same experiment.
 - Full spot detection, focus-QC sensitivity, and image extraction require the
   controlled raw-image/intermediate data.
 - The four `gao_fig1c_scaled_images.npz` files used for the representative

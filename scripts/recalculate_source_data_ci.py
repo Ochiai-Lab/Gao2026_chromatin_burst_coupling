@@ -19,6 +19,9 @@ from scipy.stats import bootstrap, ks_2samp, mannwhitneyu, rankdata, spearmanr, 
 
 from ci_source_data_io import read_sections
 
+# Fixed seeds keep label-only renumbering numerically identical.
+SORA_BOOTSTRAP_SEEDS = {'nanog_h3k27ac_rep1/SNAPtag / H3K27ac mintbody': 3904273537, 'nanog_h3k27ac_rep1/MCP': 2962495082, 'nanog_h3k27ac_rep1/mTetR': 752966123, 'nanog_ser5ph_rep1/SNAPtag / Ser5ph mintbody': 2119468077, 'nanog_ser5ph_rep1/MCP': 3425656785, 'nanog_ser5ph_rep1/mTetR': 708550852, 'sox2_h3k27ac_rep1/SNAPtag / H3K27ac mintbody': 607597237, 'sox2_h3k27ac_rep1/MCP': 2350469021, 'sox2_h3k27ac_rep1/mTetR': 274597188, 'sox2_ser5ph_rep1/SNAPtag / Ser5ph mintbody': 1780564731, 'sox2_ser5ph_rep1/MCP': 3965088427, 'sox2_ser5ph_rep1/mTetR': 1264458621}
+
 B = 9999
 TABLES = []
 DATA_ROOT = DATA = PKL = WORK = None
@@ -61,8 +64,8 @@ def median_resamples(x, rng, size=B):
     return (first + second) / 2
 
 
-def median_ci(a, b=None, key=''):
-    rng = np.random.default_rng(seed(key))
+def median_ci(a, b=None, key='', random_seed=None):
+    rng = np.random.default_rng(seed(key) if random_seed is None else random_seed)
     samples = median_resamples(a, rng)
     if b is not None:
         samples -= median_resamples(b, rng)
@@ -274,8 +277,8 @@ def snapshots():
         same(len(a),s['n_active'],f'SoRa/{dataset}/{s["channel"]}/nA')
         same(np.median(a),s['active_median_core_minus_annulus'],f'SoRa/{dataset}/{s["channel"]}/medA')
         same(mannwhitneyu(a,b).statistic,s['mannwhitney_u'],f'SoRa/{dataset}/{s["channel"]}/U')
-        records.append(median_ci(a,b,('SoRa',dataset,s['channel'])))
-    add(tab,['median_difference_Active_minus_Inactive','median_difference_CI95_low','median_difference_CI95_high'],records,'9999 quality-filtered locus-instance bootstrap draws; displayed experiment 4 only; original MW P unchanged.')
+        records.append(median_ci(a,b,random_seed=SORA_BOOTSTRAP_SEEDS[dataset + '/' + s['channel']]))
+    add(tab,['median_difference_Active_minus_Inactive','median_difference_CI95_low','median_difference_CI95_high'],records,'9999 quality-filtered locus-instance bootstrap draws; displayed experiment (public replicate 1) only; original MW P unchanged.')
 
 
 def seqfish():

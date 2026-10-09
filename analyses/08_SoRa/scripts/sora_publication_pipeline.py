@@ -1,14 +1,4 @@
-#!/usr/bin/env python3
-"""Rep1-rep4 wrapper for the revised fixed-cell SoRa 3D workflow.
-
-Reviewed segmentation masks and the original six-pixel SoRa locus
-quantification are reused read-only. All-QC random controls are read from the
-20260809 revision cache, where their sampling is independent of mTetR
-detection and state. ChamberC is biological rep3 and ChamberD is biological
-rep4. Each ND2 field remains an acquisition-level QC unit; paired fields are
-pooled only after acquisition-level state calling.
-"""
-
+"""Publication-only SoRa paired-field analysis for public replicate 1."""
 from __future__ import annotations
 
 
@@ -56,18 +46,18 @@ import sora_snapshot_pipeline as segmentation
 CODE_DIR = Path(__file__).resolve().parent
 PROJECT = Path(
     os.environ.get(
-        "SORA_REP1_REP4_PROJECT_DIR",
+        "SORA_PUBLICATION_PROJECT_DIR",
         str(GAO2026_RAW_ROOT / 'Public-TS-873-2/Microscope/Ko/260717-SoRa_Fixed/ 260718-analysis-HO'),
     )
 ).resolve()
 DATASET_MANIFEST = Path(
     os.environ.get(
-        "SORA_REP1_REP4_MANIFEST",
-        CODE_DIR / "sora_fixed_dataset_manifest_rep1_rep4_20260729.json",
+        "SORA_PUBLICATION_MANIFEST",
+        CODE_DIR / "sora_fixed_publication_manifest.json",
     )
 )
 AGGREGATE_OUTPUT_NAME = (
-    "sora_snapshot_outputs_all_replicates_rep1_rep4_gao3d_"
+    "sora_snapshot_outputs_all_replicates_publication_gao3d_"
     "rmass0139um_r1035_mcp105_allqcrandom_revision_20260810"
 )
 REVISION_TAG = "rmass0139um_allqcrandom_revision_20260810"
@@ -99,10 +89,10 @@ class DatasetBundle:
 
 def _load_manifest() -> dict[str, Any]:
     payload = json.loads(DATASET_MANIFEST.read_text(encoding="utf-8"))
-    if int(payload.get("dataset_count", -1)) != 24:
-        raise ValueError("Expected exactly 24 acquisition-level datasets.")
-    if int(payload.get("biological_replicate_group_count", -1)) != 16:
-        raise ValueError("Expected 16 condition × biological-replicate groups.")
+    if int(payload.get("dataset_count", -1)) != 8:
+        raise ValueError("Expected exactly 8 acquisition-level datasets.")
+    if int(payload.get("biological_replicate_group_count", -1)) != 4:
+        raise ValueError("Expected 4 condition × biological-replicate groups.")
     return payload
 
 
@@ -142,7 +132,7 @@ def build_dataset_bundles() -> list[DatasetBundle]:
             "replicate": str(record["biological_replicate"]),
             "chamber": str(record["chamber"]),
             "expected_fov_count": int(record["fov_count"]),
-            "random_seed": 20260729 + index * 100_000,
+            "random_seed": int(record["random_seed"]),
         }
         segmentation_name = str(record["planned_segmentation_name"])
         analysis_name = (
@@ -158,9 +148,7 @@ def build_dataset_bundles() -> list[DatasetBundle]:
             segmentation_source_name=segmentation_name,
             fixed_mtetr_r_mass_threshold=FIXED_R_MTETR,
             fixed_mcp_r_mass_threshold=FIXED_R_MCP,
-            require_reference_equivalence=(
-                str(record["analysis_id"]) == "nanog_ser5ph_rep1"
-            ),
+            require_reference_equivalence=False,
         )
         bundles.append(
             DatasetBundle(
@@ -183,11 +171,11 @@ def aggregate_config() -> gao.AnalysisConfig:
                 "planned_segmentation_name"
             ]
         ),
-        analysis_id="all_rep1_rep4_pooled",
-        analysis_label="All 24 SoRa acquisitions pooled (rep1–rep4)",
+        analysis_id="all_publication_pooled",
+        analysis_label="All 8 SoRa acquisitions pooled (public replicate 1)",
         streaming_tag_locus="Nanog/Sox2",
         mintbody_label="Ser5ph/H3K27ac",
-        replicate="rep1/rep2/rep3/rep4",
+        replicate="rep1",
         chamber="ChamberA/B/C/D",
         expected_fov_count=None,
         fixed_mtetr_r_mass_threshold=FIXED_R_MTETR,
@@ -258,7 +246,7 @@ def pooling_membership_table(
         fields = ordered["field"].astype(int).tolist()
         analysis_ids = ordered["analysis_id"].astype(str).tolist()
         chambers = ordered["chamber"].astype(str).unique().tolist()
-        expected_count = 2 if replicate in {"rep3", "rep4"} else 1
+        expected_count = 2 if replicate in {"rep1"} else 1
         grouped_rows.append(
             {
                 "condition_id": condition_id,
@@ -286,7 +274,7 @@ def pooling_membership_table(
         "sox2_ser5ph": "3+6",
         "sox2_h3k27ac": "4+5",
     }
-    paired = output["biological_replicate"].isin(["rep3", "rep4"])
+    paired = output["biological_replicate"].isin(["rep1"])
     output.loc[paired, "pooling_check_passed"] &= output.loc[
         paired, "source_fields"
     ].eq(output.loc[paired, "condition_id"].map(expected_pairs))
@@ -877,7 +865,7 @@ def _existing_quantification_summary(
             candidates["is_primary_candidate"].astype(bool).sum()
         ),
         "exclusion_records": int(len(exclusions)),
-        "method": "read_only_reuse_completed_rep1_rep2",
+        "method": "read_only_reuse_completed_acquisitions",
     }
 
 
@@ -1067,7 +1055,7 @@ def representative_segmentation_contact(
         titles,
         aggregate_config().output_root
         / "figures"
-        / "segmentation_representatives_24_acquisitions.png",
+        / "segmentation_representatives_8_acquisitions.png",
         columns=3,
     )
 
@@ -1088,7 +1076,7 @@ def representative_spot_contact(
         [bundle.analysis_id for bundle in bundles],
         aggregate_config().output_root
         / "figures"
-        / "spot_detection_representatives_24_acquisitions.png",
+        / "spot_detection_representatives_8_acquisitions.png",
         columns=3,
     )
 
@@ -1434,7 +1422,7 @@ def run_threshold_calibrations(
         ]
         label = (
             f"{records[0]['streaming_tag_locus']} × "
-            f"{records[0]['mintbody']} — rep1–rep4 pooled"
+            f"{records[0]['mintbody']} — public replicate 1 pooled"
         )
         decision, figure = _calibrate_group(
             frame,
@@ -1638,7 +1626,7 @@ def _plot_biological_replicates(
         "sox2_ser5ph",
         "sox2_h3k27ac",
     ]
-    replicate_order = ["rep1", "rep2", "rep3", "rep4"]
+    replicate_order = ["rep1"]
     pivot = (
         summary.pivot(
             index="condition_id",
@@ -1658,7 +1646,7 @@ def _plot_biological_replicates(
     axis.set_xlabel("")
     axis.set_title(
         "Biological replicate comparison\n"
-        "rep3/rep4 pool paired fields after acquisition-level QC"
+        "public replicate 1 pool paired fields after acquisition-level QC"
     )
     axis.legend(title="Biological replicate", frameon=False, ncol=4)
     axis.tick_params(axis="x", rotation=20)
@@ -1671,10 +1659,10 @@ def _plot_paired_field_results(
     summary: pd.DataFrame,
     output: Path,
 ) -> Path:
-    """Show the eight Rep3/Rep4 paired-field samples as pooled results."""
+    """Show the eight Public replicate 1 paired-field samples as pooled results."""
 
     paired = summary.loc[
-        summary["biological_replicate"].isin(["rep3", "rep4"])
+        summary["biological_replicate"].isin(["rep1"])
     ].copy()
     condition_order = {
         "nanog_ser5ph": 0,
@@ -1682,7 +1670,7 @@ def _plot_paired_field_results(
         "sox2_ser5ph": 2,
         "sox2_h3k27ac": 3,
     }
-    replicate_order = {"rep3": 0, "rep4": 1}
+    replicate_order = {"rep1": 0}
     paired["_condition_order"] = paired["condition_id"].map(
         condition_order
     )
@@ -1722,14 +1710,14 @@ def _plot_paired_field_results(
     )
     axes[0].set_ylabel("mTetR-eligible loci")
     axes[0].set_title(
-        "Rep3/Rep4 paired-field pooled state counts"
+        "Public replicate 1 paired-field pooled state counts"
     )
     axes[0].legend(frameon=False)
     axes[1].bar(
         x_positions,
         paired["active_fraction_of_eligible"],
         color=[
-            "#F58518" if rep == "rep3" else "#E45756"
+            "#F58518" if rep == "rep1" else "#E45756"
             for rep in paired["biological_replicate"]
         ],
     )
@@ -2015,7 +2003,7 @@ def run_states_and_locus_summaries(
         index=False,
     )
     pooled_summary.to_csv(
-        tables / "state_summary_all_rep1_rep4_pooled.csv",
+        tables / "state_summary_all_publication_pooled.csv",
         index=False,
     )
     state_long.to_csv(
@@ -2037,7 +2025,7 @@ def run_states_and_locus_summaries(
     )
     paired_field_figure = _plot_paired_field_results(
         biological_summary,
-        figures / "paired_field_pooled_results_rep3_rep4.png",
+        figures / "paired_field_pooled_results_publication.png",
     )
     bundle_groups: dict[tuple[str, str], list[DatasetBundle]] = {}
     for bundle in bundles:
@@ -2086,7 +2074,7 @@ def run_states_and_locus_summaries(
         "biological_replicate_summary": biological_summary,
         "paired_field_summary": biological_summary.loc[
             biological_summary["biological_replicate"].isin(
-                ["rep3", "rep4"]
+                ["rep1"]
             )
         ].reset_index(drop=True),
         "pooling_membership": membership,
@@ -2532,24 +2520,24 @@ def finalize_batch(
         for bundle in bundles
     }
     validations = {
-        "24_acquisition_manifests": len(analysis_manifests) == 24,
+        "8_acquisition_manifests": len(analysis_manifests) == 8,
         "all_acquisition_manifests_passed": all(
             bool(item["all_validations_passed"])
             for item in analysis_manifests.values()
         ),
-        "total_8503_fovs": sum(expected_cache_counts.values()) == 8503,
+        "total_publication_fovs": sum(expected_cache_counts.values()) == 3200,
         "all_fov_caches_complete": cache_counts
         == expected_cache_counts,
-        "24_acquisition_summaries": len(acquisition_summary) == 24,
-        "16_biological_replicate_summaries": (
-            len(biological_summary) == 16
+        "8_acquisition_summaries": len(acquisition_summary) == 8,
+        "4_biological_replicate_summaries": (
+            len(biological_summary) == 4
         ),
         "4_condition_summaries": len(condition_summary) == 4,
-        "24_acquisition_threshold_diagnostics": (
-            len(acquisition_diagnostics) == 24
+        "8_acquisition_threshold_diagnostics": (
+            len(acquisition_diagnostics) == 8
         ),
-        "16_biological_replicate_threshold_diagnostics": (
-            len(biological_diagnostics) == 16
+        "4_biological_replicate_threshold_diagnostics": (
+            len(biological_diagnostics) == 4
         ),
         "4_condition_threshold_diagnostics": (
             len(condition_diagnostics) == 4
@@ -2575,7 +2563,7 @@ def finalize_batch(
             ).all()
         ),
         "all_field_pairs_explicit_and_valid": bool(
-            len(pooling_membership) == 16
+            len(pooling_membership) == 4
             and pooling_membership["pooling_check_passed"].astype(
                 bool
             ).all()
@@ -2583,7 +2571,7 @@ def finalize_batch(
                 pooling_membership.loc[
                     pooling_membership[
                         "biological_replicate"
-                    ].isin(["rep3", "rep4"]),
+                    ].isin(["rep1"]),
                     "acquisition_count",
                 ]
                 == 2
@@ -2623,21 +2611,21 @@ def finalize_batch(
                 figures / "threshold_calibration_four_panel.png",
                 figures / "state_counts_by_acquisition.png",
                 figures / "active_fraction_by_biological_replicate.png",
-                figures / "paired_field_pooled_results_rep3_rep4.png",
-                figures / "segmentation_representatives_24_acquisitions.png",
+                figures / "paired_field_pooled_results_publication.png",
+                figures / "segmentation_representatives_8_acquisitions.png",
                 figures
-                / "spot_detection_representatives_24_acquisitions.png",
+                / "spot_detection_representatives_8_acquisitions.png",
                 figures / "gao_fig1c_by_biological_replicate.png",
             ]
         ),
     }
     report = {
         "analysis": (
-            "Fixed-cell SoRa rep1-rep4, 24 acquisition Gao-compatible "
+            "Fixed-cell SoRa public replicate 1, 8 acquisition Gao-compatible "
             "3D batch"
         ),
         "algorithm_version": (
-            "sora_rep1_rep4_gao3d_v3_all_qc_random_"
+            "sora_publication_gao3d_v3_all_qc_random_"
             "rmass6px_focus_sensitivity"
         ),
         "completed_at_utc": datetime.now(timezone.utc).isoformat(),
@@ -2663,7 +2651,7 @@ def finalize_batch(
                 "reused read-only from the 20260809 revision cache in a "
                 "separate date-stamped output root"
             ),
-            "rep3_rep4_field_pairs": (
+            "publication_field_pairs": (
                 "1+8, 2+7, 3+6, and 4+5 pooled after "
                 "acquisition-level QC; raw crop archives pooled before "
                 "biological-replicate Gao Fig.1c aggregation"

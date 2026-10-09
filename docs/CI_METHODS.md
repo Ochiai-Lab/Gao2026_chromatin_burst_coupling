@@ -24,7 +24,7 @@ are not silently filled or inferred from P values.
 | S4 additional nuclear-intensity summaries | `01_Snapshot_analysis/ci_inputs/snapshot_cell_measurements.csv` | Original nuclear mean intensities, Active minus Inactive, separate from the S4b central-intensity violin metric |
 | S4b central-intensity effects | Workbook individual central 3x3 SNAP means and their plotted log10 values | Displayed locus instances only, Active minus Inactive, using each displayed replicate including corrected Sox2/H3K4me3 replicate 1 |
 | S4c Spearman correlations | `01_Snapshot_analysis/ci_inputs/snapshot_snap_mcp_center_observations.csv` | Paired locus-centered SNAP and relative MCP observations within the displayed dataset |
-| S4f SoRa | Workbook individual core-minus-annulus values, traceable to `08_SoRa/biological_replicate_results/*_rep4/tables/gao_fig1c_core_annulus_values.csv` | Quality-filtered locus instances in the displayed internal experiment rep4, Active minus Inactive |
+| S4f SoRa | Workbook individual core-minus-annulus values, traceable to `08_SoRa/biological_replicate_results/*_rep1/tables/gao_fig1c_core_annulus_values.csv` | Quality-filtered locus instances in the displayed experiment, public replicate 1, Active minus Inactive |
 | Fig. 2b/S6a | Workbook gene-wise precomputed paired Active/Inactive delta-z values | Genes, within marker and activity-rank quartile, or all genes for overall summaries |
 | Fig. 2f/S6b | Workbook gene-wise log2 Active/Inactive ratios | Genes, within target and bin; exponentiated bounds give the ratio interval |
 | S12c-d | `10_HDAC_time_windows/Fig5_<gene>_duty_cycle_by_window_cell.csv` | Cells within each window and treatment; treatment minus DMSO |
@@ -35,7 +35,7 @@ The workbook is an explicit public input, not a private work-table JSON.
 It supplies the article's selected comparisons, measurements where stated
 above, and saved reference intervals. Legacy `data/revision/` source labels
 in the workbook map to the unified module folders in this release. The
-published SoRa experiment is rep4, not rep3. The other experiment and mixed
+published SoRa experiment is designated public replicate 1. The other experiment and mixed
 tables are not in this archive. Binary fields such as `on_off` and the PKL
 keys `on_images`/`off_images` remain compatibility identifiers; CSV state
 values are Active/Inactive. Only load PKLs from a trusted deposit.
@@ -79,3 +79,5 @@ The focused CI dependencies are Python, NumPy, pandas and SciPy; workbook
 parsing uses only Python's standard library. `--self-test` compares the
 bootstrap-median distribution with explicit resampling. `--sections`
 allows a selected analysis family to be rerun without changing its seeds.
+
+SoRa comparison bootstrap seeds are explicitly stored as fixed integers in the script. They are invariant to public replicate-label changes; all other seed keys retain the documented SHA-256 rule.

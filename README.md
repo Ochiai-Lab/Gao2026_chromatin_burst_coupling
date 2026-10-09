@@ -1,7 +1,7 @@
 # Gao2026 chromatin burst coupling
 
 Analysis code for Gao et al., "Minute-scale coupling of chromatin marks and
-transcriptional bursts". Version: `1.0.3`.
+transcriptional bursts". Version: `1.0.4`.
 
 ## Scope
 
@@ -12,7 +12,7 @@ and absolute NAS paths are excluded from the clean GitHub code package. Raw-imag
 require separately controlled microscopy data. Processed-data analyses and
 final-table replots use the deposited data package.
 
-The companion archive is `Gao2026_data_v1.0.3.zip`. Code and data are packaged
+The companion archive is `Gao2026_data_v1.0.4.zip`. Code and data are packaged
 separately so that this repository can be used without downloading raw images.
 The article Source Data workbook accompanies the journal article and is not
 duplicated in the data archive. See `docs/VALIDATION.md` for the tested workflow
@@ -37,10 +37,9 @@ belong in the public package. For example, the third Sox2 H3K9ac Snapshot
 acquisition is retained because it contributes to Supplementary Fig. 3e,
 whereas the unpublished Sox2 THZ1 branch is excluded.
 
-Supplementary Fig. 4f uses internal SoRa experiment `rep4`. Only that
-experiment is included in the data archive and publication replot. Its
-sample counts and P values match the article Source Data. The earlier
-description of this displayed experiment as `rep3` was incorrect.
+Supplementary Fig. 4f displays one experiment, designated `rep1` in this
+public package. Only that experiment is included in the data archive and
+publication replot. Its sample counts and P values match the article Source Data.
 Unpublished SoRa experiments, mixed-experiment summaries, unpublished
 RGFP966 1-h pretreatment observations and historical generated figures
 are not included. Quality-control records needed to explain the selection
@@ -108,7 +107,7 @@ interpreting a generated plot.
 | 01–05 | `01_Snapshot_analysis/` through `05_sci_mtChIL_seq/` | Historical inputs with audited additions or replacements where required |
 | 06 | `06_SOX2_temporal_resolution/` | 2-min, 1-min, and 30-s cross-correlation/LLI tables |
 | 07 | `07_MSD/` | Per-trajectory and replicate MSD tables |
-| 08 | `08_SoRa/` | Fixed-cell radial profiles and central enrichment for the displayed experiment, internal rep4 |
+| 08 | `08_SoRa/` | Fixed-cell radial profiles and central enrichment for the displayed experiment, public replicate 1 |
 | 09 | `09_bead_resolution/` | Per-bead FWHM, pairing, and QC tables |
 | 10 | `10_HDAC_time_windows/` | Cell-level duty-cycle windows and statistics |
 | 11 | `11_HDAC_threshold_sensitivity/` | MCP/mTetR threshold sweeps and effect summaries |

@@ -80,8 +80,8 @@ def main() -> int:
 
     sora_profiles = list((root / "08_SoRa").rglob("gao_fig1c_radial_profiles.csv"))
     require(len(sora_profiles) == 4, "SoRa displayed-experiment radial-profile files = 4")
-    require(all('_rep4' in str(path) for path in sora_profiles),
-            "SoRa publication tables use only the displayed internal experiment rep4")
+    require(all('_rep1' in str(path) for path in sora_profiles),
+            "SoRa publication tables use only the displayed public replicate 1")
 
     bead_rows = read_rows(root / "09_bead_resolution" / "paired_bead_source_data.csv")
     bead_counts: dict[str, int] = defaultdict(int)

@@ -1,12 +1,12 @@
 # Validation
 
-## Version 1.0.3 publication inputs and comparison intervals (2026-10-09)
+## Version 1.0.4 publication inputs and comparison intervals (2026-10-09)
 
 All 15 processed-data reproduction tasks and all 27 numerical comparisons
-passed using the v1.0.3 deposited inputs (`rtol=1e-12`, `atol=1e-12`).
+passed using the v1.0.4 deposited inputs (`rtol=1e-12`, `atol=1e-12`).
 The maximum absolute numerical difference was 1.1102230246251565e-16.
-The SoRa replot now uses only the displayed experiment, internal replicate
-rep4. All four condition-specific sample sizes and P values agree with
+The SoRa replot now uses only the displayed experiment, public replicate
+1. All four condition-specific sample sizes and P values agree with
 Supplementary Fig. 4f and the article Source Data. Unpublished SoRa experiments,
 mixed-experiment summaries and the unpublished RGFP966 1-h condition are absent
 from the new data archive. Earlier local archives and GitHub releases are
@@ -20,8 +20,8 @@ Median intervals use 9,999 draws; Spearman intervals use 1,999 paired draws.
 The intervals are pointwise and conditional on the analyzed series, not
 confidence intervals across independent biological experiments.
 See `CI_METHODS.md` for input mappings, methods and the validation command.
-Seven unit tests passed, including legacy transcription-state compatibility
-and median-bootstrap/AUC checks. Every data-archive member passed SHA-256 and
+Nine unit tests passed, including public replicate labels, fixed SoRa seeds,
+legacy transcription-state compatibility and median-bootstrap/AUC checks. Every data-archive member passed SHA-256 and
 size readback checks. Validation does not constitute an independent rerun of
 raw-image preprocessing or new biological replication.
 

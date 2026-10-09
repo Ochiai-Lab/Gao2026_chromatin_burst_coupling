@@ -1,7 +1,7 @@
 # 03_HDAC_inhibitor
 
 This module contains processed precursor inputs for the final Fig. 5 analysis.
-The v1.0.3 data archive excludes unpublished RGFP966 1-h pretreatment
+The v1.0.4 data archive excludes unpublished RGFP966 1-h pretreatment
 observations and historical generated figures. The final publication analysis
 is in module 12.
 

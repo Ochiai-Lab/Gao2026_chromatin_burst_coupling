@@ -11,7 +11,7 @@ import numpy as np
 import normal_field8_sora_aligned_pipeline as normal_aligned
 import normal_multidataset_pipeline as normal_batch
 import sora_gao3d_snapshot_pipeline as gao
-import sora_rep1_rep4_pipeline as sora_batch
+import sora_publication_pipeline as sora_batch
 
 
 def inspect_cache(path: Path) -> dict[str, int]:
