@@ -1,7 +1,7 @@
 # Gao2026 chromatin burst coupling
 
 Analysis code for Gao et al., "Minute-scale coupling of chromatin marks and
-transcriptional bursts". Version: `1.0.2`.
+transcriptional bursts". Version: `1.0.3`.
 
 ## Scope
 
@@ -12,7 +12,7 @@ and absolute NAS paths are excluded from the clean GitHub code package. Raw-imag
 require separately controlled microscopy data. Processed-data analyses and
 final-table replots use the deposited data package.
 
-The companion archive is `Gao2026_data_v1.0.2.zip`. Code and data are packaged
+The companion archive is `Gao2026_data_v1.0.3.zip`. Code and data are packaged
 separately so that this repository can be used without downloading raw images.
 The article Source Data workbook accompanies the journal article and is not
 duplicated in the data archive. See `docs/VALIDATION.md` for the tested workflow
@@ -36,6 +36,15 @@ displayed aggregate, and direct processed provenance for a displayed analysis
 belong in the public package. For example, the third Sox2 H3K9ac Snapshot
 acquisition is retained because it contributes to Supplementary Fig. 3e,
 whereas the unpublished Sox2 THZ1 branch is excluded.
+
+Supplementary Fig. 4f uses internal SoRa experiment `rep4`. Only that
+experiment is included in the data archive and publication replot. Its
+sample counts and P values match the article Source Data. The earlier
+description of this displayed experiment as `rep3` was incorrect.
+Unpublished SoRa experiments, mixed-experiment summaries, unpublished
+RGFP966 1-h pretreatment observations and historical generated figures
+are not included. Quality-control records needed to explain the selection
+of displayed measurements remain part of the processed provenance.
 
 ## Configuration
 
@@ -99,7 +108,7 @@ interpreting a generated plot.
 | 01–05 | `01_Snapshot_analysis/` through `05_sci_mtChIL_seq/` | Historical inputs with audited additions or replacements where required |
 | 06 | `06_SOX2_temporal_resolution/` | 2-min, 1-min, and 30-s cross-correlation/LLI tables |
 | 07 | `07_MSD/` | Per-trajectory and replicate MSD tables |
-| 08 | `08_SoRa/` | Fixed-cell radial profiles, replicate summaries, and focus-QC sensitivity |
+| 08 | `08_SoRa/` | Fixed-cell radial profiles and central enrichment for the displayed experiment, internal rep4 |
 | 09 | `09_bead_resolution/` | Per-bead FWHM, pairing, and QC tables |
 | 10 | `10_HDAC_time_windows/` | Cell-level duty-cycle windows and statistics |
 | 11 | `11_HDAC_threshold_sensitivity/` | MCP/mTetR threshold sweeps and effect summaries |
@@ -120,6 +129,23 @@ Run the processed-table validation before analysis:
 ```bash
 python scripts/validate_processed_release.py --data-root "$GAO2026_DATA_ROOT"
 ```
+
+### Source Data comparison-effect intervals
+
+```bash
+python scripts/recalculate_source_data_ci.py \
+  --data-root "$GAO2026_DATA_ROOT" \
+  --source-data /path/to/Source_Data.xlsx \
+  --output-root "$GAO2026_OUTPUT_ROOT/source_data_ci" \
+  --self-test
+```
+
+The workbook is distributed with the paper and is read, not edited. The
+script validates 4,060 comparison rows against the workbook and writes a
+long CSV of recalculated estimates and bounds, input SHA-256 hashes and
+validation results. See `docs/CI_METHODS.md` for sampling units, transforms,
+comparison directions, deterministic seeds and the limits of these
+pointwise intervals. It does not recalculate or replace existing P/q/U/W.
 
 ## Licensing
 

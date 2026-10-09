@@ -79,7 +79,9 @@ def main() -> int:
     require(len(msd_summary) == 528, "MSD replicate-summary rows = 528")
 
     sora_profiles = list((root / "08_SoRa").rglob("gao_fig1c_radial_profiles.csv"))
-    require(len(sora_profiles) == 8, "SoRa biological-replicate radial-profile files = 8")
+    require(len(sora_profiles) == 4, "SoRa displayed-experiment radial-profile files = 4")
+    require(all('_rep4' in str(path) for path in sora_profiles),
+            "SoRa publication tables use only the displayed internal experiment rep4")
 
     bead_rows = read_rows(root / "09_bead_resolution" / "paired_bead_source_data.csv")
     bead_counts: dict[str, int] = defaultdict(int)
@@ -104,8 +106,8 @@ def main() -> int:
 
     fig5_root = root / "12_Fig5_integrated"
     fig5_expected_rows = {
-        "Nanog": {"perframe": 9028, "runs": 1444},
-        "Sox2": {"perframe": 6954, "runs": 1284},
+        "Nanog": {"perframe": 6710, "runs": 1067},
+        "Sox2": {"perframe": 5246, "runs": 975},
     }
     for gene, expected in fig5_expected_rows.items():
         aggregate_root = fig5_root / gene / "tetr_mcp_hybrid_analysis"

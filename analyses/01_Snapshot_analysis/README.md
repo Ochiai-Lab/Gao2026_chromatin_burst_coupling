@@ -1,6 +1,11 @@
 # 01_Snapshot_analysis
 
-This module is part of the Gao2026 `v0.9.0-rc1` release candidate.
+This module is part of the Gao2026 v1.0.3 release.
+
+The `ci_inputs/` data subdirectory contains the original-unit observations
+needed for the additional article Source Data comparison-effect intervals.
+Only groups contributing to the displayed analyses are included. See
+`docs/CI_METHODS.md` and `scripts/recalculate_source_data_ci.py`.
 
 - `notebooks/`: output-stripped analysis notebooks.
 - `scripts/`: helper code where applicable.

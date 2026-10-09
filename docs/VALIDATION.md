@@ -1,5 +1,36 @@
 # Validation
 
+## Version 1.0.3 publication inputs and comparison intervals (2026-10-09)
+
+All 15 processed-data reproduction tasks and all 27 numerical comparisons
+passed using the v1.0.3 deposited inputs (`rtol=1e-12`, `atol=1e-12`).
+The maximum absolute numerical difference was 1.1102230246251565e-16.
+The SoRa replot now uses only the displayed experiment, internal replicate
+rep4. All four condition-specific sample sizes and P values agree with
+Supplementary Fig. 4f and the article Source Data. Unpublished SoRa experiments,
+mixed-experiment summaries and the unpublished RGFP966 1-h condition are absent
+from the new data archive. Earlier local archives and GitHub releases are
+retained; historical validation descriptions below refer to those old versions.
+
+The portable `scripts/recalculate_source_data_ci.py` matched 4,060 comparison
+rows and 13,838 effect/CI values in the article Source Data. Sampling units,
+exclusions, transformations, comparison directions and seed rules match the
+original calculation; the script does not modify the workbook or P/q/U/W.
+Median intervals use 9,999 draws; Spearman intervals use 1,999 paired draws.
+The intervals are pointwise and conditional on the analyzed series, not
+confidence intervals across independent biological experiments.
+See `CI_METHODS.md` for input mappings, methods and the validation command.
+Seven unit tests passed, including legacy transcription-state compatibility
+and median-bootstrap/AUC checks. Every data-archive member passed SHA-256 and
+size readback checks. Validation does not constitute an independent rerun of
+raw-image preprocessing or new biological replication.
+
+The reproduction and CI checks used Python 3.9.12, NumPy 1.26.4, pandas 2.3.1,
+SciPy 1.13.1, matplotlib 3.9.4 and openpyxl 3.1.5. The corrected upstream
+genomic-track environment remains documented separately in module 15.
+
+## Earlier validation runs
+
 On 2026-09-26, all 15 tasks in `scripts/run_reproduction_suite.py` completed
 successfully using the processed inputs extracted from the companion archive.
 All 27 comparisons in `scripts/validate_reproduced_outputs.py` passed with

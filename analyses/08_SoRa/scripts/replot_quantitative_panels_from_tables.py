@@ -25,7 +25,7 @@ CONDITIONS = (
     ("sox2_h3k27ac", r"$\it{Sox2}$ H3K27ac"),
     ("sox2_ser5ph", r"$\it{Sox2}$ RNAPII Ser5ph"),
 )
-REPLICATES = ("rep3", "rep4")
+REPLICATES = ("rep4",)
 STATE_COLORS = {
     "Active": "tab:orange",
     "Inactive": "tab:blue",
@@ -189,8 +189,8 @@ def main() -> None:
 
     figure, axes = plt.subplots(
         len(CONDITIONS),
-        4,
-        figsize=(12.0, 10.0),
+        2 * len(REPLICATES),
+        figsize=(6.0 * len(REPLICATES), 10.0),
         constrained_layout=True,
     )
     validation_rows: list[dict[str, object]] = []
@@ -223,7 +223,7 @@ def main() -> None:
             radial_axis.set_ylabel("Scaled intensity (max = 100)")
             radial_axis.grid(color="#D0D0D0", linestyle=":", linewidth=0.7)
             radial_axis.spines[["top", "right"]].set_visible(False)
-            radial_axis.set_title(f"Biological replicate {replicate_index + 1}")
+            radial_axis.set_title("Displayed experiment")
             plot_violin(violin_axis, data["values"], data["statistics"])
             violin_axis.set_ylabel("Core minus annulus (a.u.)")
 

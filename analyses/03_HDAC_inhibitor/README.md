@@ -1,6 +1,9 @@
 # 03_HDAC_inhibitor
 
-This module is part of the Gao2026 `v0.9.0-rc1` release candidate.
+This module contains processed precursor inputs for the final Fig. 5 analysis.
+The v1.0.3 data archive excludes unpublished RGFP966 1-h pretreatment
+observations and historical generated figures. The final publication analysis
+is in module 12.
 
 - `notebooks/`: output-stripped analysis notebooks.
 - `scripts/`: helper code where applicable.
